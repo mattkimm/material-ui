@@ -9,6 +9,7 @@ import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles(theme => ({
     root : {
         backgroundColor : '#fff',
+    
     },
     searchInput : {
         opacity : '0.6',
@@ -22,8 +23,8 @@ const useStyles = makeStyles(theme => ({
             marginRight : theme.spacing(1)
         }
     },
- 
-    
+
+
 }))
 
 export default function Header() {
