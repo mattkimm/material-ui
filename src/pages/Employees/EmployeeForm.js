@@ -1,14 +1,8 @@
 import { Grid, makeStyles, TextField } from '@material-ui/core';
 import React, { useState, useEffect} from 'react'
+import {useForm, Form}  from '../../components/useForm';
 
-const useStyles = makeStyles(theme => ({
-    root : {
-        '& .MuiFormControl-root' : {
-            width : '80%',
-            margin : theme.spacing(1)
-        }
-    }
-}))
+
 
 const initialFieldValue = {
     id : 0,
@@ -25,25 +19,22 @@ const initialFieldValue = {
 
 export default function EmployeeForm() {
 
-    const [values, setValues]  = useState({});
-    const classes = useStyles();
+    // const [values, setValues]  = useState(initialFieldValue);
+    
+    
+    const { values, setValues , handleInputChange } = useForm(initialFieldValue);
+    
+    //const classes = useStyles();
 
 
 
 
-    const handleInputChange = (e) => { 
-        const { name, value} = e.target;
-
-        setValues({
-            ...values,
-            [name] : value,
-        })
-
-    }
+   
 
 
     return (
-        <form className={classes.root}>
+ 
+        <Form>
             <Grid container>
                 <Grid item xs={6}>
                     <TextField
@@ -65,6 +56,7 @@ export default function EmployeeForm() {
                     
                 </Grid>
             </Grid>
-        </form>
+        </Form>
+ 
     )
 }
