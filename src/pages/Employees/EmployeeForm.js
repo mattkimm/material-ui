@@ -1,11 +1,8 @@
 import { FormControl, FormControlLabel, FormLabel, Grid, makeStyles, Radio, TextField } from '@material-ui/core';
 import React, { useState, useEffect} from 'react'
 import { Controls } from '../../components/controls/Controls';
-
-
 import {useForm, Form}  from '../../components/useForm';
-
-
+import * as employeeService from "../../services/employeeService";
 
 const initialFieldValue = {
     id : 0,
@@ -43,7 +40,6 @@ export default function EmployeeForm() {
 
    
 
-
     return (
  
         <Form>
@@ -72,6 +68,14 @@ export default function EmployeeForm() {
                         onChange={handleInputChange}
                         items={genderItems}
                     />
+                    <Controls.Select
+                        name="departmentId"
+                        label="Department"
+                        value = {values.departmentId}
+                        onChange = {handleInputChange}
+                        options = {employeeService.getDepartmentCollection()}
+                    />
+
                 </Grid>
             </Grid>
         </Form>
