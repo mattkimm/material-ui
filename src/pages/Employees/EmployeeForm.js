@@ -81,6 +81,12 @@ export default function EmployeeForm() {
                         value = {values.isPermanent}
                         onChange = {handleInputChange}
                     />
+                    <Controls.DatePicker
+                        name="hireDate"
+                        label ="Hire Date"
+                        value = {values.hireDate}
+                        onChange = {handleInputChange}
+                    />
 
                 </Grid>
             </Grid>
